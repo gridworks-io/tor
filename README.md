@@ -1,8 +1,8 @@
 # Tor
 
-Deploy a Tor container in your local or cloud environment.
+Deploy a Tor container in your local cloud environment.
 
-## Requisites
+## Prerequisites
 
 - `podman` or `docker` binary (doesn't really matter).
 
