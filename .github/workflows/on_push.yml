@@ -19,15 +19,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build
-        uses: docker/build-push-action@v2
-        with:
-          file: ./Containerfile
-          load: true
-          tags: ${{ env.TEST_TAG }}
-      - name: Test container image
-        run: docker run --rm ${{ env.TEST_TAG }}
-
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
