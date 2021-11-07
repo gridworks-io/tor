@@ -23,7 +23,7 @@ Clone and build the repo with `podman` or `docker` binary.
 
 ## Running the container image locally.
 
-The container image exposes the following ports:
+The container image exposes the following TCP ports:
 
 - 9050
 - 9051
