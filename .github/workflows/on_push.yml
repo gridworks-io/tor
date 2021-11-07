@@ -19,10 +19,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and export to Docker
+      - name: Build
         uses: docker/build-push-action@v2
         with:
           context: .
+          file: Containerfile
           load: true
           tags: ${{ env.TEST_TAG }}
       - name: Test container image
@@ -32,7 +33,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./Containerfile
+          context: .
+          file: Containerfile
           push: true
           tags: gwio/tor:latest
       - name: Update repo description
