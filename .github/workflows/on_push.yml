@@ -1,13 +1,14 @@
-name: Docker Image CI
-env:
-  TAG: $(date +%s)
+name: Build Containerfile
+
 on:
   push:
     branches: [ main ]
+
 jobs:
+
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Containerfile --tag tor:$TAG
+      run: docker build . --file Containerfile --tag my-image-name:$(date +%s)
