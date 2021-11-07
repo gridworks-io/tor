@@ -32,10 +32,10 @@ The container image exposes the following TCP ports:
 - 29051
 
 ```sh
-podman run --rm -d -p 9050:9050 \
+podman run --rm -d --name tor \
+-p 9050:9050 \
 -p 9051:9051 \
 -p 29050:29050 \
 -p 29051:29051 \
---name tor \
 docker.io/gwio/tor:latest
 ```
