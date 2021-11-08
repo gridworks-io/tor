@@ -25,11 +25,3 @@ jobs:
           file: ./Containerfile
           push: true
           tags: gwio/tor:latest
-      - name: Update repo description
-        uses: peter-evans/dockerhub-description@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: gwio/tor
-          short-description: ${{ github.event.repository.description }}
-          readme-filepath: ./README.md
