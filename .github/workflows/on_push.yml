@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - "main"
-    paths:
-      - README.md
 env:
   TEST_TAG: gwio/tor:test
 
@@ -34,3 +32,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: gwio/tor
           short-description: ${{ github.event.repository.description }}
+          readme-filepath: ./README.md
