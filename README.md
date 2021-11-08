@@ -2,7 +2,7 @@
 
 Deploy a Tor container in your local cloud environment.
 
-![Build](https://github.com/gridworks-io/tor/actions/workflows/on_push.yml/badge.svg)
+![CI](https://github.com/gridworks-io/tor/actions/workflows/on_push.yml/badge.svg) ![Tag](https://img.shields.io/docker/v/gwio/tor/latest) ![Size](https://img.shields.io/docker/image-size/gwio/tor/latest) ![Pulls](https://img.shields.io/docker/pulls/gwio/tor)
 
 ## Prerequisites
 
