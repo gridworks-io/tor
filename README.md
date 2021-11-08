@@ -2,6 +2,8 @@
 
 Deploy a Tor container in your local cloud environment.
 
+![Build](https://github.com/gridworks-io/tor/actions/workflows/on_push.yml/badge.svg)
+
 ## Prerequisites
 
 - `podman` or `docker` binary (doesn't really matter).
