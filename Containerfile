@@ -1,17 +1,14 @@
 FROM alpine:latest
 
-ARG USER=toruser
-ARG UID=1000
-
-RUN apk add --no-cache tor
-RUN adduser --disabled-password --gecos "" --uid "$UID" "$USER"
+RUN apk add --no-cache tor && \
+    sed "1s/^/SocksPort 0.0.0.0:9050\n/" /etc/tor/torrc.sample > /etc/tor/torrc
+RUN chown -R tor /etc/tor
 
 VOLUME /etc/tor/
 VOLUME /var/lib/tor/
 
-EXPOSE 9050 9051 29050 29051
+USER tor
 
-# Run tor as non-root user
-USER $USER
+EXPOSE 9050 9051
 
 ENTRYPOINT ["tor"]
